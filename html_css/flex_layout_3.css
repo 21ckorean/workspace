@@ -1,0 +1,31 @@
+
+
+
+
+
+
+
+
+.container > div:first-child{
+  height: 20%;
+  border-color: aqua;
+}
+
+.main{
+  display: flex;
+  height: 80%;
+}
+
+.main > div:first-child{
+  width: 60%;
+  border-color: blue
+}
+.main > div:last-child{
+  width: 40%;
+  border-color: brown;
+
+  display: flex;
+  flex-direction: column;
+  
+}
+

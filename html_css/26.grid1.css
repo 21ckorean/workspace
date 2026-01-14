@@ -1,0 +1,24 @@
+.container{
+  width: 500px;
+  height: 400px;
+  margin: 30px auto;
+  border: 1px solid black;
+
+  display: grid;
+  /* grid-template-columns: 100px 100px 100px; */
+  /* grid-template-columns: 20% 30% 10% 20%; */
+  /* grid-template-columns: 1fr 2fr 3fr; 배율대로 */ 
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 10px 20px;
+  align-content: center;
+}
+
+.item{
+  /* border: 1px solid red;
+  background-color: black;
+  background-color: #000000;
+  background-color: rgb(0, 0, 0);  */
+  background-color: rgba(0, 0, 0, 0.7); /* 0 ~ 255 */
+  
+}

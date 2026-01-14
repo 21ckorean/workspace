@@ -1,0 +1,103 @@
+body{
+  background-color: white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container{
+  width: 1000px;
+  height: 340px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  padding: 30px 30px;
+}
+
+.title{
+  margin-bottom: 20px;
+}
+
+.main{
+  display: flex;
+  gap: 30px;
+  margin: 20px 20px;
+  
+}
+
+.main1{
+  border-radius: 10px;
+  width: 50% ;
+  padding: 10px;
+  background-color: lightgrey;
+  font-weight: bold;
+}
+
+.main1-1 > div{
+  margin-bottom: 15px;
+}
+
+.main1-1 > div > input{
+  width: 100%;
+  padding: 5px;
+}
+.main1-2{
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+input{
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+span{
+  margin-bottom: 10px;
+}
+
+.main1-2 > button{
+  background-color: lightcoral;
+  color: white;
+  border-radius: 5px;
+  width: 100px;
+  border: none;
+  padding: 5px;
+}
+.main2{
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  width: 50% ;
+  padding: 15px;
+  
+}
+
+.main2-1 > h3,p{
+  margin-bottom: 5px;
+}
+
+.main2-2{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.main2-2 > button{
+  background-color: lightblue;
+  color: white;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+  padding: 5px;
+  border: none;
+}
+
+.main2-2 > p{
+  margin-bottom: 5px;
+}
+
+.main2-2 > div > p{
+  color: green;
+}

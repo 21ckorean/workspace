@@ -1,0 +1,83 @@
+body{
+  background-color: lightblue;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container{
+  background-color: white;
+  width: 400px;
+
+  border-radius: 8px;
+  box-shadow: 1px 1px 3px 1px;
+  margin: auto;
+  padding: 50px 40px;
+}
+
+.hi{
+  font-size: 0.9rem;
+}
+
+
+.form{
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.form > div{
+  margin-bottom: 13px;
+}
+
+button{
+  height: 30px;
+}
+
+.btn1, .btn2{
+  background-color: aqua;
+}
+
+.btn3{
+  background-color: lightsalmon;
+}
+
+.backemail{
+  background-color: lightpink;
+}
+
+input{
+  width: 220px;
+  height: 30px;
+  padding: 5px;
+  font-size: 10px;
+}
+
+.pp > input{
+  width: 300px;
+}
+
+.email > span > input{
+  width: 95px;
+}
+
+.born > span > select{
+  width: 97px;
+}
+
+.red{
+  color: red;
+}
+
+.party{
+  display: flex;
+  justify-content: space-around;
+}
+
+select{
+  height: 30px;
+}

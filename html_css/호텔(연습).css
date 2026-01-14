@@ -1,0 +1,88 @@
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightskyblue;
+  height: 100vh;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 500px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.picture{
+  width: 100%;
+}
+
+
+.main{
+  padding: 1px 10px;
+}
+
+.main > .price > span{
+  color: darkgoldenrod;
+  font-size: 25px;
+}
+.main > .price > p{
+  color: gray;
+}
+
+.main > div{
+  margin-bottom: 10px;
+}
+
+
+
+
+.option{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin: 10px;
+  padding: 5px;
+}
+
+.information{
+  display: flex;
+  flex-direction: column;
+}
+
+.information > p{
+  margin-bottom: 5px;
+}
+
+
+.info{
+  display: flex; 
+}
+.info1{
+  display: flex;
+  gap: 5px;
+  border: 1px solid black;
+}
+
+.info1 > img{
+  border: 1px solid gray;
+  border-radius: 50%;
+}
+
+.info2{
+  display: flex;
+  justify-content: flex-end;
+  border: 1px solid black;
+}
+
+button{
+  background-color: lightgreen;
+  color: white;
+  text-align: center;
+  padding: 1px 10px;
+}
+
