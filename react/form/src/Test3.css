@@ -1,0 +1,27 @@
+.resume_container{
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  width: 800px;
+  height: 800px;
+  border: 1px solid black;
+}
+
+.resume_experienced{
+  display: flex;
+  gap: 30px
+  ;
+}
+
+.resume_experienced > div{
+  display: flex;
+}
+
+
+.table_certification{
+  border: 1px solid black;
+}

@@ -4,6 +4,11 @@ import Test1 from "./Test1"
 import Test2 from "./Test2"
 import Test2t from "./Test2t"
 import Test3 from "./Test3"
+import Test4 from "./Test4"
+import Test5 from "./Test5"
+import Test6 from "./Test6"
+import Test7 from "./Test7"
+import Test7t from "./Test7t"
 import UseState1 from "./UseState1"
 import Variable from "./Variable"
 import Variable2 from "./Variable2"
@@ -20,7 +25,12 @@ function App() {
     {/* <Test1 /> */}
     {/* <Test2 /> */}
     {/* <Test2t /> */}
-    <Test3 />
+    {/* <Test3 /> */}
+    {/* <Test4 /> */}
+    {/* <Test5 /> */}
+    {/* <Test6 /> */}
+    {/* <Test7 /> */}
+    <Test7t />
    </div>
   )
 }

@@ -1,0 +1,17 @@
+.mouse{
+  width: 500px;
+  height: 80px;
+  background-color: crimson;
+  color: white;
+  text-align: center;
+  line-height: 80px;
+  margin-bottom: 10px;
+}
+.hello{
+  width: 500px;
+  height: 80px;
+  background-color: lightblue;
+  color: white;
+  text-align: center;
+  line-height: 80px;
+}
