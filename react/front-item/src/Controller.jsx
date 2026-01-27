@@ -1,8 +1,12 @@
 import React from 'react'
 
+//const Controller = (props) => {
 const Controller = ({setCnt, cnt}) => {
   //console.log(props); => 
-  // {setCnt : setCnt(), cnt : 0}
+  // {
+  //    aaa : setCnt(),
+  //    bbb : 0
+  // }
   //   키    :   밸류 ,  키  : 밸류  
 
   console.log('controller 컴포넌트가 실행됩니다')
