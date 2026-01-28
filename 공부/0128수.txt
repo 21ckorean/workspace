@@ -1,0 +1,113 @@
+기능만들기
+
+게시글 최신글로부터 조회되도록한다
+=>데이터베이스에서 조회해서 화면에 띄우세요!
+
+웹개발 필요파일
+
+얘내들만들꺼임. 만드는위치는 정해져있음. 파트3
+패키지 만들고 클래스만들기, mapper는 인터페이스로만듬.
+
+1. DTO : 데이터베이스와 자바간 데이터 전송을 위한 객체
+2. xml : 실행할 쿼리문 작성
+3. Mapper interface : xml에서 만든 쿼리문을 실행할 추상메서드 선언(껍데기)
+4. Service : interface에서 선언한 추상메서드를 실행할 메서드 구현
+5. Controller : 요청에 대한 응답 기능을 구현(api)
+이후 실행할때 최초의 한번은 실행해야함.
+main -> java -> BoardApplication에서 main메서드 실행하고 재실행하면됨.
+
+
+
+스프링이 알아서 만들어주게하려면
+반드시 default패키지 안에 생성해야된다.
+Java-> com.green.board -> 패키지생성
+각 패키지에 클래스생성
+
+이후 DTO
+//DTO(Data Transfer Object) : 데이터 전송 객체
+//spring과 Basic_board 테이블의 데이터를 주고 받을 수 있는 객체
+//Basic_board 테이블의 컬럼정보를 저장할 수 있는 맴버변수를 생성
+//맴버변수는 반드시 테이블의 컬럼명을 기준으로 생성
+//자바식 -> 카멜케이스 -> 낙타
+
+@Setter
+@Getter
+@ToString
+public class BoardDTO {
+  private int boardNum; //BOARD_NUM -> boardNum
+  private String title;
+  private String writer;
+  private String content;
+  private int readCnt;
+  private LocalDateTime createDate;
+}
+작성
+이후 쿼리만들기 resorces -> mapper -> board-mapper.xml
+조회쿼리왜함? : 조회한 내용을 화면에 보여주기위해서
+
+<mapper namespace="com.green.board.mapper.BoardMapper">
+    <!--resultMap : 데이터베이스 테이블에서 조회된 데이터를 Spring으로 가져올 자료형을 매칭-->
+    <resultMap id="board" type="com.green.board.dto.BoardDTO">
+        <id     column="BOARD_NUM"      property="boardNum" />
+        <result column="TITLE"          property="title" />
+        <result column="WRITER"         property="writer" />
+        <result column="CONTENT"        property="content" />
+        <result column="READ_CNT"       property="readCnt" />
+        <result column="CREATE_DATE"    property="createDate" />
+    </resultMap>
+
+    <!--게시글 목록 조회 쿼리-->
+    <!--화면에 보여줄 데이터만 조회, 단, PK컬럼(PRIMARY KEY)은 무조건 조회-->
+    <!--select 태그는 resultType 혹은 resultMap 속성이 반드시 있어야 함-->
+    <!--resultMap, resultType은 쿼리 실행 결과 조회되는 하나의 행 데이터를 저장할 변수를 지정-->
+    <!--resultType - 조회되는 하나의 행 데이터를 자바에서 제공하는 자료형으로 받을 수 있을 때-->
+    <!--resultMap - 조회되는 하나의 행 데이터를 우리가 만든 자료형(CLASS, BoardDTO)으로 받을때-->
+    <select id="selectBoardList" resultMap="board">
+        SELECT BOARD_NUM
+            , TITLE
+            , WRITER
+            , CREATE_DATE
+            , READ_CNT
+        FROM BASIC_BOARD
+        ORDER BY CREATE_DATE DESC
+    </select>
+
+CONTENT컬럼은 문제에없으니 조회안했음.
+
+resultMap이 하는 역할이 뭐임?
+<!--resultMap : 데이터베이스 테이블에서 
+조회된 데이터를 Spring으로 가져올 자료형을 매칭-->
+
+조회된 데이터에서 하나의 행데이터를 자료형으로 가져올려고 쓰는게 
+resultMap임
+
+테이블도DB에서만들어져있꾸 자바에 자료형도 만들어놧는데
+그걸연결시켜주려고 resultMap 쓰는거임.
+resultMap에서 type은 자료형임.
+ 왼쪽에 column데이터를 자바로 가져올때 type으로 가져오는거임
+type의 변수들이 property임
+resultMap은 select할때만 씀
+
+xml에 namespace에 com.green.board.mapper.BoardMapper 넣기
+
+import java.util.List;
+//해당 파일의 목적 : xml에서 만든 쿼리문을 실행할 추상메서드 선언
+
+//초기세팅
+//1. xml파일과 Mapper Interface를 연결 - xml 파일의 namespace확인 (com.green.board.mapper.)
+//2. interface 위에 @Mapper 어노테이션 적용
+//  -> @Mapper : 객체생성 + 해당 interface가 쿼리를 실행시키는 메서드가 있는 파일임을 스프링한테 알려줌
+
+//쿼리문을 실행할 추상메서드를 선언
+//메서드 선언에는 메서드명, 리턴타입, 매개변수 정보를 결정할 수 있어야 함
+//메서드명 : 실행할 쿼리문의 id 값
+//리턴타입 : 쿼리 실행결과 전체 데이터를 받을 수 있는 자료형
+//매개변수 : 쿼리 실행 시 빈 값을 채울 수 있는 데이터
+
+
+@Mapper
+public interface BoardMapper {
+  //게시글 목록 조회 쿼리 실행 메서드
+  List<BoardDTO> selectBoardList();
+
+}

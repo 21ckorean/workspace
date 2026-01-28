@@ -1,0 +1,8 @@
+body태그에 플렉스를줘서 
+컨테이너를 중앙으로 옮기려고 
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 를했다.
+안에 

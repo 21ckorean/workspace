@@ -148,3 +148,11 @@ SELECT DISTINCT CATEGORY
 		ELSE '기타'
 		END AS '위치'
 	FROM BOOK_STORE;
+
+SELECT * FROM BASIC_BOARD;
+
+# 특정 테이블의 정보 확인
+DESC BASIC_BOARD; # DESC - description(설명, 묘사) 
+
+
+
