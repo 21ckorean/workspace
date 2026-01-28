@@ -3,10 +3,75 @@ body{
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  
 }
 
-.container td
+.container{
+  display: flex;
+  flex-direction: column;
+  width: 1200px;
+  border: 1px solid black;
+  gap: 50px;
+  padding: 10px;
+  font-size: 0.8rem;
+}
+
+.party{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.information{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+
+
+
+.information > div{
+  display: flex;
+  justify-content: space-between;
+}
+
+tr > td:nth-child(1){
+  background-color: rgb(250, 233, 233);
+}
+
 
 td{
-  
+  border: 1px solid black;
+}
+
+.addInfo{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+
+.addInfo > tr:nth-child(1) > td:nth-child(2){
+  display: flex;
+  gap: 20px;
+}
+
+.red{
+  color: red;
+}
+
+.party, .information tr > td:nth-child(1){
+  padding: 10px 15px;
+}
+
+.party, .information tr > td:nth-child(2){
+  padding: 10px 10px;
+}
+
+.addInfo tr > td:nth-child(1){
+  padding: 10px 15px;
+}
+.addInfo tr > td:nth-child(2){
+  padding: 10px 5px;
 }

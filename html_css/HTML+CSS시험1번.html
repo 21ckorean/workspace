@@ -13,60 +13,207 @@
 
     <div class="party">
       <h3>회원 가입</h3>
-      <table style="border: 1px solid black;">
+      <table >
         <tr>
-          <td>d</td>
-          <td>d</td>
+          <td>
+            <span>
+              회원구분
+              <span class="red">*</span>
+            </span>
+          </td>
+          <td>
+            <input 
+            type="radio" 
+            name="classification"
+            checked>
+            <span>개인회원</span>
+            <input 
+            type="radio" 
+            name="classification">
+            <span>외국인회원(foreigner)</span>
+          </td>
         </tr>
       </table>
     </div>
 
     <div class="information">
+      <div>
       <h3>기본 정보</h3>
+      <span>
+        <span class="red">*</span>
+        <span style="font-size: 0.7rem;">필수입력사항</span>
+      </span>
+      </div>
       <table>
         <tr>
-          <td></td>
-          <td></td>
+          <td>
+            <span>아이디</span>
+            <span class="red">*</span>
+          </td>
+          <td>
+            <input type="text">
+            <span>
+              (영문 소문자/숫자, 4~16자)
+            </span>
+          </td>
         </tr>
         <tr>
-          <td></td>
-          <td></td>
+          <td>
+            <span>비밀번호</span>
+            <span class="red">*</span>
+          </td>
+          <td>
+            <input type="text">
+            <span>
+              (영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 8자~16자)
+            </span>
+          </td>
         </tr>
         <tr>
-          <td></td>
-          <td></td>
+          <td>
+            <span>비밀번호확인</span>
+            <span class="red">*</span>
+          </td>
+          <td>
+            <input type="text">
+          </td>
         </tr>
         <tr>
-          <td></td>
-          <td></td>
+          <td>
+            <span>이름</span>
+            <span class="red">*</span>
+          </td>
+          <td>
+            <input type="text">
+          </td>
         </tr>
         <tr>
-          <td></td>
-          <td></td>
+          <td>
+            <span>주소</span>
+          </td>
+          <td>
+            <div>
+              <input type="text">
+              <a href="https://naver.com" target="_black">
+              <button type="button">
+                우편번호 >
+              </button>
+              </a>
+            </div>
+            <div>
+              <input type="text">
+              <span>기본주소</span>
+            </div>
+            <div>
+              <input type="text">
+              <span>나머지주소 (선택입력가능)</span>
+            </div>
+          </td>
         </tr>
         <tr>
-          <td></td>
-          <td></td>
+          <td>
+            <span>일반전화</span>
+          </td>
+          <td>
+            <select>
+              <option selected>02</option>
+              <option>053</option>
+              <option>052</option>
+            </select>
+            <span>-</span>
+            <input type="text">
+            <span>-</span>
+            <input type="text">
+          </td>
         </tr>
         <tr>
-          <td></td>
-          <td></td>
+          <td>
+            <span>휴대전화</span>
+            <span class="red">*</span>
+          </td>
+          <td>
+            <select>
+              <option selected>010</option>
+              <option>011</option>
+              <option>016</option>
+            </select>
+            <span>-</span>
+            <input type="text">
+            <span>-</span>
+            <input type="text">
+          </td>
+        </tr>
+        
+        <tr>
+          <td>
+            <span>SMS 수신여부</span>
+            <span class="red">*</span>
+          </td>
+          <td>
+            <div>
+              <input type="checkbox">
+              <span>동의함</span>
+            </div>
+            <div>
+              <span>
+                쇼핑몰에서 제공하는 유익한 이벤트 소식을 SMS로 받으실 수 있습니다.
+              </span>
+            </div>
+          </td>
         </tr>
         <tr>
-          <td></td>
-          <td></td>
+          <td>
+            <span>이메일</span>
+            <span class="red">*</span>
+          </td>
+          <td>
+            <input type="text">
+          </td>
         </tr>
         <tr>
-          <td></td>
-          <td></td>
-        </tr>
+          <td>
+            <span>이메일 수신여부</span>
+            <span class="red">*</span>
+          </td>
+          <td>
+            <div>
+              <input type="checkbox">
+              <span>동의함</span>
+            </div>
+            <div>
+              <span>
+                쇼핑몰에서 제공하는 유익한 이벤트 소식을 이메일로 받으실 수 있습니다.
+              </span>
+            </div>
+          </td>
+        </tr>        
         <tr>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
+          <td>
+            <span>평생회원</span>
+          </td>
+          <td>
+            <div>
+              <input 
+              type="radio" 
+              name="lifeTime">
+              <span>동의함</span>
+              <input 
+              type="radio" 
+              name="lifeTime"
+              checked> 
+              <span>동의안함</span>             
+            </div>
+            <div>
+              <span>
+                -평생회원으로 가입하시면 스타일맨 회원 탈퇴시까지는 휴면회원으로 전환되지 않으며, 고객님의 개인정보가 탈퇴시까지 안전하게 보관됩니다.
+              </span>
+            </div>
+            <div>
+              <span>
+                -지금 평생 회원으로 가입하시면 쿠폰혜택을 드립니다. (쿠폰혜택을 받으신 경우, 3개월간 평생회원을 유지하셔야 합니다.)
+              </span>
+            </div>
+          </td>
         </tr>
       </table>
     </div>
@@ -75,20 +222,94 @@
       <h3>추가 정보</h3>
       <table>
         <tr>
-          <td></td>
-          <td></td>
+          <td>
+            <span>생년월일</span>
+            <span class="red">*</span>
+          </td>
+          <td>
+            <div>
+              <input type="text">
+              <span> 년</span>
+              <input type="text">
+              <span> 월</span>
+              <input type="text">
+              <span> 일</span>
+            </div>
+
+            <div>
+              <input 
+              type="radio" 
+              name="birth">
+              <span>양력</span>
+              <input 
+              type="radio" 
+              name="birth">
+              <span>
+                음력 (14세 미만 회원가입을 제한하고 있습니다.)
+              </span>
+            </div>
+          </td>
         </tr>
         <tr>
-          <td></td>
-          <td></td>
+          <td>
+            <span>성별</span>
+          </td>
+          <td>
+            <input 
+            type="radio" 
+            name="gender">
+            <span>남자</span>
+            <input 
+            type="radio" 
+            name="gender">
+            <span>여자</span>
+          </td>
         </tr>
         <tr>
-          <td></td>
-          <td></td>
+          <td>
+            <span>상의 사이즈</span>
+          </td>
+          <td>
+            <input type="checkbox">
+            <span>90~95</span>
+            <input type="checkbox">
+            <span>100~105</span>
+            <input type="checkbox">
+            <span>110~115</span>
+            <input type="checkbox">
+            <span>120~125</span>
+            <input type="checkbox">
+            <span>130~</span>
+          </td>
         </tr>
         <tr>
-          <td></td>
-          <td></td>
+          <td>
+            <span>하의 사이즈</span>
+          </td>
+          <td>
+            <input type="checkbox">
+            <span>~30</span>
+            <input type="checkbox">
+            <span>32</span>
+            <input type="checkbox">
+            <span>33</span>
+            <input type="checkbox">
+            <span>34</span>
+            <input type="checkbox">
+            <span>35</span>
+            <input type="checkbox">
+            <span>36</span>
+            <input type="checkbox">
+            <span>37</span>
+            <input type="checkbox">
+            <span>38</span>
+            <input type="checkbox">
+            <span>39</span>
+            <input type="checkbox">
+            <span>40</span>
+            <input type="checkbox">
+            <span>42~</span>
+          </td>
         </tr>
       </table>
     </div>
