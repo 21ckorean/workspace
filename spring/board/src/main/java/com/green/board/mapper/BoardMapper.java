@@ -26,4 +26,10 @@ public interface BoardMapper {
   //게시글 목록 조회 쿼리 실행 메서드
   List<BoardDTO> selectBoardList();
 
+  //게시글 등록 쿼리 실행 메서드
+  int insertBoard(BoardDTO boardDTO);
+
+  //게시글 상세 정보 조회 쿼리 실행 메서드
+  BoardDTO selectBoard(int boardNum);
+
 }

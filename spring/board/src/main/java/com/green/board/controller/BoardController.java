@@ -1,9 +1,7 @@
 package com.green.board.controller;
 import com.green.board.dto.BoardDTO;
 import com.green.board.service.BoardService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -36,4 +34,22 @@ public class BoardController {
     return list;
   }
 
+  //게시글 등록 api
+  //(POST) localhost:8080/boards
+  @PostMapping("")
+  public int regBoard(@RequestBody BoardDTO boardDTO){
+    System.out.println(boardDTO);
+    int result = boardService.regBoard(boardDTO);
+    return result;
+    //api에서 return하면 react로 간다..
+  }
+
+  //게시글 상세정보 조회 기능 메서드
+  //(GET) localhost:8080/boards/1
+  @GetMapping("/{boardNum}")
+  public BoardDTO getBoard(@PathVariable("boardNum") int boardNum){
+    BoardDTO boardDTO = boardService.getBoard(boardNum);
+    return boardDTO;
+    //return boardService.getBoard(boardNum);
+  }
 }

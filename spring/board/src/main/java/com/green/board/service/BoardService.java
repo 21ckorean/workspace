@@ -32,5 +32,20 @@ public class BoardService {
     return list;
   }
 
+  //게시글 등록 기능 메서드
+  public int regBoard(BoardDTO boardDTO){
+    //insert 쿼리 결과 리턴되는 데이터는 새롭게 추가된 행 갯수를 의미
+    int insertedRowCnt = boardMapper.insertBoard(boardDTO);
+    return insertedRowCnt;
+  }
+
+  //게시글 상세정보 조회 기능 메서드
+  public BoardDTO getBoard(int boardNum){
+    BoardDTO boardDTO = boardMapper.selectBoard(boardNum);
+    return boardDTO;
+
+    //= return boardMapper.selectBoard(boardNum);
+  }
+
 
 }

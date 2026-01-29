@@ -1,23 +1,24 @@
 import React, { useEffect, useState } from 'react'
 import styles from './BoardList.module.css'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 
 ///컴포넌트가 마운트될때 게시글 목록을 spring에서 조회한 후 화면에 띄워준다
-
 const BoardList = () => {
+  const nav = useNavigate();
+
+
 
   //조회한 게시글 목록 데이터를 저장할 state변수
   const [boardList, setBoardList] = useState([]);
-
-
 
   //마운트 시 게시글 목록 조회
   useEffect(() => {
     axios.get('http://localhost:8080/boards')
     .then(response => {
       console.log(response.data)
-      
+      setBoardList(response.data);
     })
     .catch(e => console.log(e));
   }, []);
@@ -57,7 +58,24 @@ const BoardList = () => {
             </tr>
           </thead>
           <tbody>
-           
+           {
+              boardList.map((board, i) => {
+                return(
+                  <tr key={board.boardNum}>
+                    <td>{boardList.length - i}</td>
+                    <td>
+                      {/* span태그는 인라인요소라서 데이터크기만큼만 */}
+                      <span onClick={e => {nav(`/detail/${board.boardNum}`)}}>
+                        {board.title}
+                      </span>
+                    </td>
+                    <td>{board.writer}</td>
+                    <td>{board.createDate}</td>
+                    <td>{board.readCnt}</td>
+                  </tr>
+                )
+              })
+           }
           </tbody>
         </table>
       </div>
@@ -65,6 +83,7 @@ const BoardList = () => {
       <div className={styles.btn_div}>
         <button 
         type='button'
+        onClick={e => {nav('/reg')}}
         >글쓰기</button>
       </div>
     </div>
