@@ -44,12 +44,36 @@ public class BoardController {
     //api에서 return하면 react로 간다..
   }
 
-  //게시글 상세정보 조회 기능 메서드
-  //(GET) localhost:8080/boards/1
-  @GetMapping("/{boardNum}")
-  public BoardDTO getBoard(@PathVariable("boardNum") int boardNum){
-    BoardDTO boardDTO = boardService.getBoard(boardNum);
+  //게시글 상세정보 조회 api
+  //(GET) localhost:8080/boards/get/1 -> 게시글 상세조회
+  //(GET) localhost:8080/boards/update/1 -> 수정 하기 위한 조회
+  @GetMapping("/{type}/{boardNum}")
+  public BoardDTO getBoard(@PathVariable("boardNum") int boardNum,
+                           @PathVariable("type") String type){
+    //type = 'get' : 상세조회, type = 'update' 수정 페이지 조회
+    BoardDTO boardDTO = boardService.getBoard(boardNum, type);
     return boardDTO;
     //return boardService.getBoard(boardNum);
   }
+
+
+  //게시글 삭제 기능 메서드
+  //(DELETE) localhost:8080/boards/1
+  @DeleteMapping("/{boardNum}")
+  public int deleteBoard(@PathVariable("boardNum") int boardNum){
+    int result = boardService.deleteBoard(boardNum);
+    return result;
+  }
+
+  //게시글 수정 api
+  //(PUT) localhost:8080/boards/1
+  @PutMapping("/{boardNum}")
+  public void updateBoard(@PathVariable("boardNum") int boardNum,
+                          @RequestBody BoardDTO boardDTO){ //리퀘스트바디는 포스트랑 풋에서만쓰는거임. 일단외워
+    System.out.println("boardNum = " + boardNum);
+    System.out.println(boardDTO);
+    boardDTO.setBoardNum(boardNum);
+    boardService.updateBoard(boardDTO);
+  }
+
 }

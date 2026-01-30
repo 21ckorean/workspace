@@ -5,6 +5,7 @@ import BoardList from "./pages/BoardList"
 import RegForm from "./pages/RegForm"
 import { useState } from "react"
 import BoardDetail from "./pages/BoardDetail"
+import UpdateForm from "./pages/UpdateForm"
 
 function App() {
 
@@ -38,8 +39,9 @@ function App() {
         </Route>
 
         {/* 게시글 수정 페이지 */}
+        <Route path="/update/:boardNum" element={ <UpdateForm /> }>
 
-        {/* 게시글 삭제 페이지 */}
+        </Route>
         
       </Routes>
     </div>

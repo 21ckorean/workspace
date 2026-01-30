@@ -1,0 +1,73 @@
+※SQL 문제풀면서 내가몰랐던것들(배웠지만까먹은것들)
+
+정렬문법
+ORDER BY 컬럼명 DESC
+ORDER BY 컬럼명 ASC
+
+ANSI문법 
+괄호안은 넣어야될것들
+FROM (테이블명 별칭A) INNER JOIN (테이블명 별칭B)
+ON (조건은 보통 중복되는컬럼넣기, A.컬럼 = B.컬럼)
+WHERE (추가조건)
+ORDER BY (정렬컬럼) DESC 혹은 ASC;
+
+~가 포함된 컬럼이름
+조건절에 넣음.
+WHERE 컬럼 LIKE '%~%'
+
+테이블에 별칭주고 조인쓰면
+ 적어도 중복된 컬럼 앞에 별칭. 을붙여줘야함. 
+안쓰면 오류뜸.
+
+UPDATE쿼리 작성법
+UPDATE 테이블명
+SET
+	컬럼명 = 바꾸고싶은데이터
+WHERE BOARD_NUM = 보고싶은데이터
+
+조회수 증가 기능X
+
+게시글 상세 조회 기능
+-게시글 상세 조회 쿼리
+-조회수 1증가 쿼리
+
+DELETE 쿼리문법
+DELETE FROM 테이블명
+WHERE 조건
+
+콘솔 오류모음
+500번대 : 자바 잘못함
+404 : 리액트에서 주소랑 자바주소랑 일치하지않음.
+
+1. 상세화면에서 '수정'버튼 클릭!(제목, 내용)
+2. 수정페이지로 이동
+   기존의 내용은 화면에 보여야 함.
+3. 내용수정 후 '수정확인'버튼을 누르면 수정되어야함
+4. 상세페이지로 이동
+   (글번호 3번글 수정했으면 3번글 상세페이지로이동)
+
+1교시 : 자바 문제3개 공부후 시험
+	Operater -> Operator1, Test2_3
+	Array -> Test2-5풀이
+
+2교시 : html+css 실습준거2개 풀고 시험
+3교시 : 디비 쿼리 공부후 시험
+4교시 : boardDTo boardcontroller
+	emp empcontroller
+	itemdto itemcontroller 공부후 시험
+boardNum = 2;
+boardInfo = {
+  boardNum:5
+  title: '새 게시글'
+  writer:'작성자1'
+  content:'새글입니다'
+  readCnt:9,....
+}
+
+쿼리문제 7번 시험에 비슷하게나옴.
+몇월에입사한거 데이터 뽑는거 아직모름
+->데이터베이스4번에 있습니다
+
+
+
+

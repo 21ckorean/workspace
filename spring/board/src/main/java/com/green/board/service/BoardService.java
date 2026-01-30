@@ -29,6 +29,7 @@ public class BoardService {
   public List<BoardDTO> getList(){
               //객체명.메서드호출();;
     List<BoardDTO> list = boardMapper.selectBoardList();
+
     return list;
   }
 
@@ -40,11 +41,28 @@ public class BoardService {
   }
 
   //게시글 상세정보 조회 기능 메서드
-  public BoardDTO getBoard(int boardNum){
+  public BoardDTO getBoard(int boardNum, String type){
+
+    //상세조회기능을 할때만 조회수1증가
+    if(type.equals("get")){
+      boardMapper.updateReadCnt(boardNum);
+    }
+
+    //게시글 상세 정보 조회 쿼리 실행
     BoardDTO boardDTO = boardMapper.selectBoard(boardNum);
     return boardDTO;
-
     //= return boardMapper.selectBoard(boardNum);
+  }
+
+  //게시글 삭제 쿼리 실행 기능메서드
+  public int deleteBoard(int boardNum){
+    int deleteRowCnt = boardMapper.deleteBoard(boardNum);
+    return deleteRowCnt;
+  }
+
+  //게시글 수정 기능
+  public void updateBoard(BoardDTO boardDTO){
+    boardMapper.updateBoard(boardDTO);
   }
 
 
