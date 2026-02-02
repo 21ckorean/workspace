@@ -16,13 +16,13 @@ public class Test1연습 {
       min = b < c ? b : c;
     }
 
-    if(b > a && b > c){
+    else if(b > a && b > c){
       max = b;
       mid = Math.max(a, c);
       min = Math.min(a, c);
     }
 
-    if(c > a && c > b){
+    else{
       max = c;
       mid = a > b ? a : b;
       min = Math.min(a,b);
