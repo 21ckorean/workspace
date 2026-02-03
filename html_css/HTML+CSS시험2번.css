@@ -48,11 +48,22 @@
 .header-2 > div{
   position: relative;
   display: inline;
+  overflow: hidden;
 }
 .header-2 > div > input{
   padding : 8px 40px 8px 8px;
+  width: 300px; 
 }
-
+.header-2 > div > button{
+  position: absolute;
+  right: 3%;
+  top: 20%;
+  border: none;
+  border-radius: 5px;
+}
+.header-2 > div > button:hover{
+  cursor: pointer;
+}
 
 .meal{
   position: relative;

@@ -24,7 +24,7 @@ public class BoardController {
     //리스트에 게시글을 5개 저장
     boardList.add(new BoardDTO(1, "첫번째글", "김자바", 5));
     boardList.add(new BoardDTO(2, "두번째글", "이자바", 0));
-    boardList.add(new BoardDTO(3, "세번째글", "김자바", 10));
+    boardList.add(new BoardDTO(3, "세글", "김자바", 10));
     boardList.add(new BoardDTO(4, "네번째글", "이자바", 3));
     boardList.add(new BoardDTO(5, "다섯번째글", "김자바", 7));
   }
