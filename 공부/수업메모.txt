@@ -1,0 +1,124 @@
+25-12-15 
+1교시
+폰트 - 구글폰트, 눈누
+
+구글폰트 
+montserrat 검색 -> getfont 클릭 -> get embed code 클릭
+web용으로 사용
+
+import 클릭
+embed code in ... 복사후 css에 넣기
+ *{
+  font-family: "Montserrat", sans-serif;
+} 넣기
+
+hotel 예제
+div컨테이너안에
+div 두덩이나누고
+밑에 div에 또 세덩이나눔.
+
+바디부터
+배경색넣고
+디스플레이 플렉스
+
+모든 태그들은기본으로 높이값이 없어서 내용을 넣기전엔 아무것도 안보임.
+  display: flex;
+  justify-content: center;
+  align-items: center;
+해도 height : 100vh를 줘야 세로도 중앙으로감
+
+img-div에
+img 하나, 아이콘하나(폰트어썸이나 부스트트랩사용) 들어감
+
+폰트어썸 heart검색 후 아이콘선택후 i태그 복사
+span태그 안에 이미지 넣고 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> 링크 적용
+
+이미지는 원본크기만큼 나타남.
+콘테이너 안에 넣으려면
+콘테이너 크기가 360px인데
+div는 너비값이 끝까지다.
+컨테이너 안에 꽉차게만드려면
+이미지 width를 100%로 지정하면 딱맞게들어간다.
+보통 이미지 width를 설정하면 높이도 자동으로 바뀐다.
+
+현재 이미지가 삐져나와있는상태임 
+이미지 넣으면 원래 넘쳐흐름.
+공간 벗어낸곳은 잘라내야됨.
+
+오버플로우 속성으로 넘쳐흐르는걸 해결가능
+컨테이너에 오버플로우 히든 적용.
+
+곂치는건 포지션 써야함
+
+부모태그엔 랠러티브
+포지션을 앱솔루트로 주면 top left 속성 적용하면 좌표상 위에서 몇 왼쪽에서몇에 위치한곳에 이미지가 있다.
+그래서 기준을 정해서 랠러티브를 주면 기준이 바뀜.
+실제로 움직여야되는거에는 앱솔루트
+기준이되는곳엔 랠러티브
+
+아이콘은 색을바꿀때 글자취급해야됨.
+color : white
+
+detail-div 여백
+
+폰트웨이트 기본 : 500 여기서 볼드주면 700쯤.
+
+어디안에 있는 p태그들을 따로 선택해주려면
+클래스명 > p:nth chile(){} 하면됨.
+--------------------------------------------------------------------------
+2교시
+
+detail-2 
+상하 테두리
+배치는 2개 영역으로 나눔.
+배치할때 플렉스로 움직여버림.
+
+부모태그 플렉스 후 
+주축방향 아이템 정렬 justify-content에서 space evenly 쓰면 균등하게 정렬됨.
+
+
+detail-3 두덩이 세덩이나눌수있는데
+두덩이로나눔.
+
+자손 detail-3띄어쓰기img{}
+
+justify-content : space-between -> 가운데만 빈공간주기.
+align-itmes : center; -> 교차축 방향 중앙정렬.
+플랙스 아이템간 간격을 주려면 gap을 쓰면됨.
+
+글자 인라인방식 div에 style 속성사용.
+
+이미지에 마우스 올리면 커지는방법.
+img:hover{
+scale: 1.1;} 1.1배 커지는거임.
+
+호버가 없는 선택자에 transition 속성 넣기.
+transition: all 0.5s;
+
+자바 프로그래밍을 위해서는 반드시 설치해야될 것이 있다.
+
+html, css, java 모두 메모장에서 코딩 가능
+html, css -> vscode
+java -> eclipse, intellij, vscode
+코딩자체에는 설치프로그램없음.
+
+java -> jdk 반드시 설치
+html, css 해석 -> 웹브라우저
+java 해석 -> jdk가 해석
+
+3교시
+오라클 
+비번 : 대문자1, 소문자1, 특수문자1, 숫자1
+
+엣지 프로그램 실행해줘
+
+더블클릭 -> c:/program/macro/dege/edge.exe
+
+
+5교시
+jaba 폴더(공부한 내용 모아놓는 폴더)
+프로젝트1
+  src
+    -hello.java
+    -hi.java

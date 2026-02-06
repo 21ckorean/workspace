@@ -98,6 +98,152 @@ import, export
 배운거 써먹기개어려움.
 
 
+2월6일
+1교시
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+gitignore 불필요한파일 깃에올리는걸 막아줌.
+
+
+2교시
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+깃허브에서 뉴레포지토리 만듬
+Repository name : book_shop
+
+인텔리제이 -> 터미널 -> 깃배쉬 ->
+
+git init  -> .git이라는 숨김파일생김
+
+git branch -m main -> master를 main으로 바꿈
+
+git remote add origin https://github.com/21ckorean/book_shop.git
+ -> 원격저장소에연결
+
+git add .
+
+git commit -m "프로젝트 세팅"
+
+git push origin main
+
+DBeaver 도서쇼핑몰프로젝트테이블생성
+
+java->com.green.book_shop ->
+
+member
+ controller
+ service
+ mapper
+ dto
+book
+ controller
+ service
+ mapper
+ dto
+cart
+ controller
+ service
+ mapper
+ dto
+buy
+ controller
+ service
+ mapper
+ dto
+
+com.green.book_shop.member.controller.MemberController
+com.green.book_shop.member.service.MemberService
+com.green.book_shop.member.mapper.MemberMapper
+com.green.book_shop.member.dto.MemberDTO
+member-mapper.xml 파일에 <resultMap>만들기
+
+3교시
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+스프링
+final 넣으면 값안바뀜. 그래서 최초의값을 넣어줘야함.
+
+@NoArgsConstructor //매개변수가없는 생성자 만들어주세요! 클래스명이랑동일함 MemberDTO()
+@AllArgsConstructor //모든매개변수가 있는 생성자 만들어주세요! Member(String,String,...)
+@RequiredArgConstructor // 맴버변수중에 final이 붙어있는것만 생성자로만들어줌.
+
+리액트
+src
+ App.jsx
+ pages -> 한 화면을 표현하는 jsx파일을 저장
+  member -> 회원과 관련된 화면을 구성하는 jsx
+   -Login.jsx
+   -Join.jsx
+  book
+   -BookList.jsx
+ components -> 화면을 구성하는 컴포넌트를 저장
+  common -> 모든 페이지에서 공통으로 사용하는 컴포넌트
+  layout -> 레이아웃을 구성하는 컴포넌트
+  member
+  book
+ api -> spring과 통신하는 함수를 구현하는 js파일 저장
+
+
+4교시
+리액트
+reset.css를 src 폴더에 넣음.
+App.jsx에 import './reset.css'
+
+layout폴더에 BasicLayout.module.css만듬
+BasicLayout.jsx 위에
+ import styles from './BasicLayout.module.css'
+
+폰트고르기 : 구글폰트, 눈누
+
+5교시,6교시
+리액트 
+디자인.
+
+상품관리
+ 카테고리관리
+ 상품등록
+ 상품재고관리
+ 상품정보수정
+
+구매관리
+ 구매내역조회
+ 월별매출관리
+ 주간매출관리
+
+회원관리
+ 회원정보조회
+ 회원상태변경
+
+7교시 
+회원가입디자인
+
+
+
+###### 도서 쇼핑몰 프로젝트 테이블 생성 SQL #####
+
+### 생성 예상 테이블 ###
+#1. 회원 정보 테이블 SHOP_MEMBER
+#2. 도서 카테고리 테이블 BOOK_CATEGORY
+#3. 도서 정보 테이블 SHOP_BOOK
+#4. 장바구니 테이블 SHOP_CART
+#5. 구매 정보 테이블 SHOP_BUY
+
+# 회원정보 테이블 생성문
+CREATE TABLE SHOP_MEMBER (
+	MEM_EMAIL VARCHAR(50) PRIMARY KEY 
+	, MEM_PW VARCHAR(50) NOT NULL 
+	, MEM_NAME VARCHAR(30) NOT NULL 
+	, MEM_TEL VARCHAR(15) NOT NULL UNIQUE #'010-1111-2222'
+	, MEM_ADDR VARCHAR(50) 
+	, ADDR_DETAIL VARCHAR(100)
+	, IS_USING VARCHAR(10) DEFAULT 'Y' #'Y' : 사용중, 'N' : 사용 안 함
+	, MEM_ROLE VARCHAR(20) DEFAULT 'USER' #USER:회원, MANAGER:쇼핑몰 운영자, ADMIN:관리자
+	, JOIN_DATE DATETIME DEFAULT SYSDATE()
+);
+
+
+
+
+
+
 
 
 
