@@ -240,6 +240,42 @@ CREATE TABLE SHOP_MEMBER (
 );
 
 
+(데이터)유효성 검사 - Validation 처리
+입력한 데이터가 형식 또는 요구사항에 맞게 작성되었나?
+
+디비(다수데이터 + 신뢰성 보장)에 저장
+
+유효성 검사를 하기위해 사용하는 문법 - 정규식
+비밀번호는 4~12글자, 영문 + 숫자
+
+이메일.
+-필수, 이메일형식, 최대글자수 50
+
+const [cnt, setCnt] = useState(0);
+
+setCnt(cnt+1)     1
+console.log(cnt)  2
+setCnt(cnt+1)     3
+console.log(cnt)  4
+
+실행순서 2,4,(1,3)
+
+
+setCnt(prev => {return prev+1});     1
+console.log(cnt)                     2
+setCnt(prev => {return prev+1});     3
+console.log(cnt)                     4
+실행순서 2 4 1 3
+
+회원가입
+->아이디 중복확인
+->daum 우편번호 검색
+->validation이 뭐임?
+
+
+
+질문1.
+
 
 
 
