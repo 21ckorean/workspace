@@ -1,0 +1,116 @@
+상품등록
+- select, textarea (공통 컴포넌트)
+- 상품 이미지 추가 등록(몹시 매우어려움) 설끝나고.
+
+axios 보완
+로그인기능
+사이드메뉴에서 메뉴 클릭 시 페이지 이동. 기능만들기
+
+
+<<1교시>>
+common -> Select.jsx, Select.module.css 생성
+
+Select컴포넌트 매번 옵션달라지는데 
+어캐 해결함?
+
+구조분해할당으로
+props 활용, children이라는 props 활용.
+children 사용할땐 컴포넌트 마감태그말고 
+<select></select> 이렇게 사용함.
+
+Textarea 구석탱이 사이즈변경하는거 삭제하는법
+스타일에 속성값으로 resize : none; 을 주면됨.
+
+input태그중에 radio, checkbox는 디자인어려워서안할듯.
+
+
+<<2교시>>
+로그인기능만들기
+참고PDF : Spring Security(Spring)
+
+*세션 로그인 방식(쉬움) (옛날엔 이 방식이 많았음)
+		(리액트에서 구현어려움)
+*JWT 토큰 방식(고통스러움) (나중에 설명해줄꺼임)
+
+*썰
+옛날에는 WEB이 
+PC한정사용이었음.
+요즘은
+폰,태블릿도 사용함. 그렇다보니 많은문제점이 발견됨.
+그래서 JWT 토큰방식으로 바뀌는추세임.
+폴더블폰(앱 개발 회사..) 스트레스받음.
+
+오늘은 JWT 토큰방식 흉내만 낼꺼임.
+
+session을 사용한 인증,인가방식
+클라이언트.리액트                 서버.스프링    서버저장공간:세션
+                      요청
+Input id             ----->                       로그인정보저장
+Input pw             <----                        각각 id부여 a,b
+ a,b                  응답
+
+                    장바구니정보요청 -> 서버쪽에서준 a와 일치확인
+
+JWT 방식
+클라이언트                              서버
+                      요청
+                     ----->
+
+                     <-----
+                    응답(JWT토큰)
+                  자유이용권같은거임   
+                     만료기간있음
+                 자유이용권팔찌만있으면됨 
+
+일반회원이 보는 화면상단 Login글자 클릭시 로그인페이지로이동
+
+Login.jsx에서 id,pw입력후 '로그인'버튼 클릭하면
+al
+
+
+4교시
+url params 방식
+requestBody -> post, put만 사용가능.
+
+const response = await axios
+.get('http://localhost:8080/members/login', {params : {}});
+    return response;
+
+
+5교시
+true, false
+truthy, falsy
+
+falsy : 0, '', null, undefined, NaN
+
+
+6교시
+제이슨이뭐임?
+자바스크립트에있는 객체를 문자로...
+
+7교시
+로그인 실패시 입력데이터초기화
+로그인시 목록페이지로이동
+패스워드인풋에 type='password'
+onKeyDown 으로 엔터누르면 로그인되도록하기.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+잡다한지식
+＊import는 사용이안되면 흐림처리, 사용이되면 불들어옴.
+＊구조분해할당할때 매개변수로 준 {...props}를
+속성 적는곳에 {...props} 적으면됨.

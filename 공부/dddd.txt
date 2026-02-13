@@ -1,0 +1,59 @@
+aa ="java"
+bb = "1234"
+
+a = {
+  memEmail : "java",
+  memPw : "1234",
+  memName : ""
+  memTel : ""
+}
+
+MemberDTO memberDTO = a;
+
+memberDTO = {
+  memEmail : "java",
+  memPw : "1234",
+  memName : ""
+  memTel : ""
+}
+
+member-mapper.xml파일
+쿼리
+<select id="isUsableLogin" resultMap="member">
+		SELECT MEM_EMAIL
+			,MEM_PW
+		FROM SHOP_MEMBER
+		WHERE MEM_EMAIL = #{memEmail}
+		AND MEM_PW = #{memPw}
+	</select>
+
+mapper -> MemberMapper
+//로그인 쿼리 실행 메서드
+  MemberDTO isUsableLogin(MemberDTO memberDTO);
+
+service -> MemberService
+//로그인 기능 메서드
+ public boolean isUsableLogin(MemberDTO memberDTO){
+   //이메일과 비밀번호가 조회됐다 -> 로그인 가능하다.
+   //이메일과 비밀번호가 조회안됨 -> 로그인 불가능하다.
+    MemberDTO dto = memberMapper.isUsableLogin(memberDTO);
+    return dto != null;
+ }
+
+controller -> MemberController
+//로그인 체크하는 api
+ @GetMapping("/Login/{memEmail}/{memPw}")
+ public ResponseEntity<?> checkLogin(@PathVariable("memEmail") String aa,
+                                      @PathVariable("memPw") String bb){
+
+    MemberDTO a = new MemberDTO();
+    a.setMemEmail(aa);
+    a.setMemPw(bb);
+
+    try{
+      boolean result = memberService.isUsableLogin(a);
+      return ResponseEntity.status(HttpStatus.OK).body(result);
+    }catch(Exception e){
+      log.error("로그인 실행 중 에러", e);
+      return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+    }
