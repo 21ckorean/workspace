@@ -9,7 +9,10 @@ import java.util.List;
 public interface ItemMapper {
 
   //상품 목록 조회 추상메서드
-  public List<ItemDTO> selectItem(ItemDTO itemDTO);
+  public List<ItemDTO> selectItemList(ItemDTO itemDTO);
+
+  //상품 등록 추상메서드
+
 }
 
 

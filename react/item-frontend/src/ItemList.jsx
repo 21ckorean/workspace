@@ -1,6 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import styles from './ItemList.module.css'
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+
+
 
 const ItemList = () => {
+   const nav = useNavigate()
+
+  //조회한 상품목록 데이터를 저장할 state변수
+  const [itemList, setItemList] = useState([]);
+
+  //마운트되면 스프링에서 데이터가져오기
+  useEffect(() => {
+    axios.get('http://localhost:8080/items')
+    .then((response) => {
+      console.log(response.data);
+      setItemList(response.data);
+    })
+    .catch(e => console.log(e))
+  }, []);
+
+
   return (
     <div>
       <div>
@@ -19,34 +40,25 @@ const ItemList = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
+            {
+              itemList.length !=0
+              ?
+              itemList.map((item, i) => {
+                return(
+                  <tr key={i}>
+                    <td>{item.itemNum}</td>
+                    <td>{item.itemName}</td>
+                    <td>{item.price}</td>
+                    <td>{item.regName}</td>
+                    <td>{item.regDate}</td>
+                  </tr>
+                )
+              })
+              :
+              <tr>
+                <td colSpan={5}>조회된 상품이 없습니다.</td>
+              </tr>
+            }
           </tbody>
         </table>
       </div>
@@ -54,6 +66,7 @@ const ItemList = () => {
       <div>
         <button 
           type='button'
+          onClick={e => {nav('/items')}}
         >상품등록</button>
       </div>
 

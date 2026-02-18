@@ -13,14 +13,39 @@
 		<result column="ITEM_REGDATE"	property="itemRegDate"/>
 	</resultMap>
 
-	<select id="selectItem" resultMap="item">
-		SELECT ITEM_NAME
+	<!--상품목록조회쿼리-->
+	<select id="selectItemList" resultMap="item">
+		SELECT ITEM_NUM
+		    ,ITEM_NAME
 			,PRICE
 			,ITEM_REGNAME
 			,ITEM_REGDATE
 		FROM ITEM_INFO
 	</select>
 
+	<!--상품등록쿼리-->
+	<insert id="insertItem">
+		INSERT INTO ITEM_INFO (
+			ITEM_NAME
+			, PRICE
+			, ITEM_REGNAME
+			, ITEM_GUIDE
+		) VALUES (
+			#{itemName}
+			, #{price}
+			, #{itemRegName}
+			, #{itemGuide} )
+	</insert>
+	<!--상품상세정보 조회쿼리-->
+	<select id="selectItem" resultMap="item">
+		SELECT ITEM_NUM
+			, ITEM_NAME
+			, PRICE
+			, ITEM_REGNAME
+			, ITEM_GUIDE
+			, ITEM_REGDATE
+		FROM ITEM_INFO
+	</select>
 </mapper>
 
 

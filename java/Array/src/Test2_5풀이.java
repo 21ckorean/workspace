@@ -13,5 +13,6 @@ public class Test2_5풀이 {
 
     //로또 번호 출력
     System.out.println(Arrays.toString(lotto));
+
   }
 }
