@@ -1,0 +1,102 @@
+26/02/23 월
+
+1교시
+
+도서 목록 조회
+
+도서 상세 조회(실습)
+
+DB
+SELECT B.BOOK_NUM, BOOK_TITLE, BOOK_PRICE, UPLOAD_FILE_NAME 
+FROM SHOP_BOOK B, BOOK_IMG I
+WHERE B.BOOK_NUM = I.BOOK_NUM
+AND IS_MAIN = 'Y';
+
+resultMap = 조회할데이터 어떻게 자바로 가져올꺼니?
+정의하는 데이터임.
+resultMap id = book
+resultMap = book
+데이터베이스에있는 column값을 property값으로 가져올꺼임
+
+2교시
+
+정석적방법 하나 알려줌..
+
+조인
+RDBMS
+두 테이블의 관계를 코드 상에서도 표현.
+
+1:1관계, 1:N관계
+어떤기능을 만드느냐에 따라 요구사항이 달라질 수 밖에없음.
+
+ex) 휴대폰정보테이블(소유자, 폰번호, 모델명)
+사람정보(주민번호, 이름, 거주지)
+1:1관계
+
+ex) 게시글, 댓글
+게시글하나에는 댓글여러개.
+1:N관계
+
+댓글하나에는 해당게시글 무조건한개
+1:1관계
+
+SHOP_BOOK, BOOK_IMG   테이블
+책하나에 이미지 여러개있으니까 1:N관계
+      1  :  N
+
+BookDTO,  BookImgDTO 테이블을 표현하기위한 클래스
+      1  :  N
+
+private List<BookImgDTO> bookImgList;
+
+두테이블이 1:1인지 1:N인지 파악하기.
+DTO에 한줄넣어서 관계를 맺고,
+두 resultMap에도 관계를 맺어주면됨.
+
+<!--<association property=""></association> 1 : 1 관계 설정-->
+<!--<collection property=""></collection> 1: N 관계 설정-->
+<collection property="" resultMap=""></collection>
+
+property와 resultMap 을 쓰면됨.
+
+resultMap이 다른파일에 있으면 바로쓸수없음.
+
+조인한 데이터를 자바로 가져오는데 어떤형태로 가져오게
+되는지 Postman을 통해확인.
+
+3교시
+
+4,5,6교시 실습.. 정신없음..
+
+7교시
+const test_data = [
+    {
+      id: 1,
+      itemName : '1번상품',
+      price : 1000
+    },
+    {
+      id: 1,
+      itemName : '1번상품',
+      price : 1000
+    },
+    {
+      id: 1,
+      itemName : '1번상품',
+      price : 1000
+    }
+  ]
+
+//filter는 조건에 맞는 데이터만 모아서 배열로 반환
+  //filter(() => {})
+  test_data.filter((e) => {return e.id === 1})[0];
+  test_data.filter(e => e.id === 1)[0];
+
+조인 쿼리 데이터 spring에서 받는 법
+조인 하려는 두 테이블의 관계 설정.(1:1, 1:N)
+DTO -> ResultMap
+
+스프링에있는 이미지 띄울떄는
+WebConfig파일에 오버라이드하는거있음.
+
+
