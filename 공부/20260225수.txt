@@ -1,0 +1,134 @@
+2026/02/25
+
+1교시
+도서 하나는 도서 이미지 여러개 가진다.
+도서 1:N 도서이미지
+
+맵퍼안에
+리절트맵이여러개 있으면
+association 쓸때
+resultmap에 관계맺을 리절트맵id만 쓰면되지만,
+
+다른맵퍼안에있는 리절트맵과 관계맺으려면
+resultMap에 주소.id를 써야함
+
+<div className={styles.container}>     
+        <table className={styles.table}>
+          <thead>
+            <tr>
+              <td>NO</td>
+              <td>
+                <Input 
+                  type='checkbox'
+                />
+              </td>
+              <td>도서정보</td>
+              <td>가격</td>
+              <td>수량</td>
+              <td>구매가격</td>
+              <td>장바구니 등록 일자</td>
+              <td>삭제</td>
+            </tr>
+          </thead>
+          <tbody>          
+            {
+              cartList.map((cart, i) => {
+                return (
+                  <tr key={i}>
+                  <td>{cart.cartNum}</td>
+                  <td>
+                    <Input 
+                      type='checkbox'
+                    />
+                  </td>
+                  <td>
+
+                    <img style={{width : '60px'}}
+                    src={`http://localhost:8080/upload/${cart.book.bookImgList[0].uploadFileName}`}/>
+
+                    {cart.book.bookTitle}</td>
+                  <td>{cart.book.bookPrice}</td>
+                  <td>
+                    <Input 
+                      type='text'
+                    />
+                  </td>
+                  <td>60000원</td>
+                  <td>{cart.cartDate}</td>
+                  <td>
+                    <Button 
+                      title='삭제'
+                    />
+                  </td>
+               </tr>  
+                )
+              })
+            } 
+          </tbody>
+        </table>
+        <div className={styles.bottom}>
+          <div>
+            <p>총 구매 가격 : </p>
+          </div>
+          <div>
+            <Button 
+              title='선택 삭제'
+            />
+            <Button 
+              title='선택 구매'
+            />
+          </div>
+        </div>    
+    </div>
+
+No 행번호 하는법 
+<td>{cartList.length - i}</td>
+
+2,3교시 따라하기.
+
+4교시
+장바구니 등록 버튼 클릭
+ -> 무조건 insert
+
+현재 내 장바구니에서 없는 상품이면 insert
+있다면 update
+
+내가 장바구니에 추가하려는 도서가 내 장바구니에 있는
+상품인지 판단하는 쿼리
+insert 쿼리
+update 쿼리
+
+
+5교시
+자바의 기본자료형에는 null이 못들어감
+참조자료형에는 들어갈 수 있음.
+
+6교시
+1.장바구니 화면 하단의 총가격을 띄우세요
+2. 삭제 기능 구현 -> 삭제 성공 후 장바구니 페이지에 그대로 있어야함.
+
+7교시..
+1,2번 둘다못해서 선생님꺼따라씀.
+
+8교시
+깃 브렌치(branch:나뭇가지)
+
+인텔리제이 터미널열고 깃배쉬열기
+git init
+
+git branch -m main
+...
+브랜치 대충배움
+
+
+
+
+
+
+
+
+
+
+
+
+
