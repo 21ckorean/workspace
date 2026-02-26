@@ -1,0 +1,140 @@
+2026/02/26
+
+1교시(DB)
+Sub Query
+EMP테이블과 DEPT테이블로 공부함.
+
+WHERE먼저해석후 SELECT 해석
+
+2교시(DB)
+서브쿼리 좀더함.
+SHOP_CART테이블과 SHOP_BOOK테이블로 공부함.
+
+한 컬럼의 데이터 수 구하는법
+COUNT(컬럼명)
+
+GROUP BY, HAVING이 뭐였더라......
+
+3교시(Spring+React BookShop프로젝트)
+CheckboxTest 
+
+//선택한 체크박스들의 데이터를 저장할 state변수
+  const [fruits, setFruits] = useState();
+
+['apple', 'banana', 'orange']
+
+//자바스크립트의 배열에 특정 데이터가 존재하는지 
+  판단하기 위한 문법(react문법 아님)
+  includes(); 함수 배웠음.
+  e.target : 이벤트가 발생한 태그
+
+  스프레드연산자 사용함.
+
+조건에 맞는 데이터만 걸러서 배열로 리턴
+filter()
+
+4교시(Spring+React BookShop프로젝트)
+filter() 재설명
+
+arr = [1, 2, 3, 4, 5]
+
+#2보다 큰 수만 걸러내고 싶은데 형태는 여전히 배열로 ->[3, 4, 5]
+e는 반복돌때마다 하나씩입력
+arr.filter((e) => {retrun e > 2});
+arr.filter( e =>  e > 2);
+
+#arr배열 요소 중 짝수 요소만 필터링 [2, 4]
+arr.filter(e => e % 2 === 0);
+
+arr = ['java', 'python', 'c++']
+#'c++'을 제외한 배열을 가져오기
+arr.filter((e) => {return e !== 'c++'});
+
+stuList = [
+  {stuNum : 1, name : 'kim', score : 80}
+  {stuNum : 2, name : 'lee', score : 70}
+  {stuNum : 3, name : 'park', score : 90}
+]
+
+#점수가 80점 이상인 학생만 필터링
+stuList.filter(e => e.score >= 80);
+
+
+fruits = ['banana', 'orange', 'apple']를
+
+fruits = ['banana', 'orange'] 로만들려면
+
+fruits.filter(e => e !== 'apple');
+
+'apple'이 value값에 있으니까
+실제로 코딩할때는
+fruits/fliter(e => e !== e.target.value)
+
+맨위 체크박스가 체크되면
+아래 체크박스 모두가 체크,
+맨위 체크박스가 체크해제되면
+아래 체크박스 모두가 체크해제.
+
+
+
+
+
+
+
+5교시
+장바구니목록에 수량변경하기
+장바구니목록에 체크박스 체크및 해제할때마다
+총구매가격 달라지는것 실습
+
+체크박스에 pk인 카트넘이 필요.
+
+6교시
+자바스크립트에서 배열안에 뭐넣을땐 push();
+cartNumList = [1, 2, 3, 4]
+
+# 전체 장바구니 목록 데이터
+cartList =[
+  {cartNum:1, cartCnt : 3,bookPrice: 3000}
+  {cartNum:2, cartCnt : 3,bookPrice: 1000}
+  {cartNum:3, cartCnt : 1,bookPrice: 2000}
+  {cartNum:4, cartCnt : 4,bookPrice: 1000}
+  {cartNum:5, cartCnt : 5,bookPrice: 4000}
+]
+
+7교시
+계속체크박스만드는중....
+
+arr =[1,2,3]
+//조건에 맞는 데이터만 배열로 리턴
+arr.filter();
+
+//데이터를 원하는 형태로 변경해서 배열로 리턴
+arr.map((e) => {return e + 1 }); -> [2,3,4]
+arr.map((e) => {return string(e) }); -> ['2', '3', '4']
+
+student = [
+ {name : 'kim', age:20}
+ {name : 'Lee', age:30}
+ {name : 'Park', age:40}
+]
+
+[20, 30, 40]
+
+const result = student.map(e => e.age)
+
+const result = []
+for(const e of student){
+ result.push(e.age)
+}
+
+8교시
+main 브렌치에서 chk브랜치 삭제 희망하시면
+git branch -D chk
+
+
+
+
+금요일에 할것 : 선택삭제, 선택구매버튼 공부.
+
+
+
