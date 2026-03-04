@@ -1,0 +1,123 @@
+260304
+1교시
+-react
+-데이터 분석(파이썬)
+-라즈베리파이(데이터분석으로 대체)
+-react native (App 개발)
+
+스마트팜 웹/앱 개발
+1. 데이터 수집/ 가공/ 적재(파이썬)
+   온도, 습도, 토양수분, 조도(라즈베리파이)
+
+  센서 엑츄에이터
+  온도 -> 에어컨
+토양수분 -> 물 펌프
+
+2. 데이터 활용한 모니터링 웹 + 기기제어
+3. 앱 + 제어
+
+2달(최소 4시간은 프로젝트, 나머지 시간은 프로젝트 진행정도에따라수업)
+3월18일~5월14일 (수료 5월22일)
+프로젝트 시작과 동시에 매일 8교시에는 작업일지 작성(notion+ai자동생성)
+
+2교시
+1.구매정보등록 (INSERT) 마무리
+2.메뉴 이동하기 <NavLink>
+3.
+
+
+3교시, 4교시
+cartNumList = [1, 3]
+
+cartList = [
+{cartNum : 1, bookNum:2, cartCnt :3}
+{cartNum : 2, bookNum:1, cartCnt :1}
+{cartNum : 3, bookNum:3, cartCnt :1}
+]
+
+
+for(const e of cartList){
+ if(cartNumList.includes(e.cartNum)){
+ e.bookNum;, e.cartCnt;
+}
+}
+
+result = [
+ {cartNum : 1, bookNum : 2, cartCnt : 3},
+ {cartNum : 3, bookNum : 3, cartCnt : 1},
+]
+
+const result1 = cartList.filter(e => cartNumList.includes(e.cartNum));
+const result2 = result1.map(e => e.bookNum); //result2 = [2,3]
+
+const result = cartList.filter(e => cartNumList.includes(e.cartNum))
+                       .map(e => e.bookNum); 
+
+배열.filter(); -> 조건에 맞는 데이터만 배열로 리턴
+배열.map(); -> 배열 데이터를 다른 형태의 배열로 리턴
+ 
+
+5교시
+<Link>
+useNavigate()
+
+<NavLink>
+링크와 다르게 className={} 안에 함수 적을수있음.
+이걸로 클래스네임의isActive가 true일때 클릭된거니까 디자인해줄수있음
+
+6교시
+구매목록페이지
+쿼리및..틀짜기... 
+
+7교시
+SHOP_BUY | BUY_DETAIL | SHOP_BOOK | BOOK_IMG
+    1     :    N
+               1      :     1
+                            1     :     N 
+DTO
+<resultMap>
+
+8교시
+공부
+ <table 
+            className={styles.bigTable}
+            key={i}
+          >
+            <thead>
+              <tr>
+                <td>{cart.buyNum} |</td>
+                <td>bookTitle or bookTitle 외 몇개</td>
+                <td>{cart.buyPrice}</td>
+                <td>{cart.buyDate}</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td colSpan={5}>
+
+                  <table className={styles.smallTable}>
+                    <thead>
+                      <tr>
+                        <td>NO</td>
+                        <td>도서 정보</td>
+                        <td>가격</td>
+                        <td>수량</td>
+                        <td>구매가격</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>목록길이-i 번호</td>
+                        <td>uploadFileName, BookTitle</td>
+                        <td>bookPrice</td>
+                        <td>cartCnt</td>
+                        <td>bookPrice * cartCnt</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
