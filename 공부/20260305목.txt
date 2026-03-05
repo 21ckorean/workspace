@@ -1,0 +1,85 @@
+260305
+
+1교시
+
+파이썬 - 빅데이터 관련 분야
+
+데이터 수집 -> 가공(결측치, 이상치 제거, 백터화, 인덱싱)
+-> 머신러닝
+
+java, python
+
+notion...
+
+html,css,js,jsx -> vscode
+java - intellij
+python - anaconda, pycham, jupyter notebook
+
+주피터 b누르면 
+코드를 작성할수있는 셀이 생성됨.
+각 셀은 별도로 실행시킬 수 있음.
+셀 실행은 컨트롤+엔터
+
+코드를쓸지, 일반적인 글자를 쓸지 선택할 수 있음.
+코드입력환경
+마크다운입력환경
+
+셀클릭후 esc누르면 왼쪽에 셀선택은 되어있다.
+
+마크다운 : 문양(태그)을 사용한 텍스트입력방식.
+
+2교시
+파이썬
+
+3교시
+파이썬 10분, 스프링+리액트 북샾
+
+     <table className={styles.table}>
+                <thead>
+                  <tr>
+                    <td>NO</td>
+                    <td>도서 정보</td>
+                    <td>가격</td>
+                    <td>수량</td>
+                    <td>구매가격</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>목록길이-i 번호</td>
+                    <td>uploadFileName, BookTitle</td>
+                    <td>bookPrice</td>
+                    <td>cartCnt</td>
+                    <td>bookPrice * cartCnt</td>
+                  </tr>
+                </tbody>
+              </table>
+
+
+5교시
+src = 이미지있는주소
+detail.bookDTO.bookImgList[0].uploadFileName
+
+"오늘의 주문건수" 이달의 주문건수
+오늘의 매출금액 이달의 매출금액
+
+1.관리자 사이드 메뉴의 첫번째로 '관리자 홈'메뉴 추가
+2.관리자가 로그인하면 '관리자 홈' 메뉴로 페이지이동
+3. '관리자홈' 화면 제작 (recharts)
+
+오늘의 주문건수. -> SHOP_BUY의 BUY_NUM을 오늘날짜기준
+이달의 주문건수. -> SHOP_BUY의 BUY_NUM의 날짜가 일정기간 기준
+오늘의 매출금액 -> SHOP_BUY의 BUY_PRICE의 합 오늘날짜기준
+(FOREACH 사용할듯)
+
+이달의 매출금액 -> 오늘의 
+
+
+
+
+
+
+
+
+
+
