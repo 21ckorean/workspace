@@ -1,0 +1,43 @@
+260309
+
+1교시
+딕셔너리
+리스트
+반복문
+실습1
+
+
+
+내일부터는 react native(앱)
+
+3교시
+react native 개발환경 세팅 및 테스트
+
+앱개발 언어(전통 언어를 native 코드)
+Android(Java계열)
+IOS(C 계열)
+
+하나의 언어로 안드, 아이 둘 다 개발할 수 없을까?
+대부분이 실패...
+
+Flutter, React Native
+
+node.js 설치하면 npm 명령어 사용
+React Native(실제 폰 or 가상 폰(에뮬레이터))
+
+안드로이드 개발 -> 안드로이드 스튜디오(intellij + 에뮬레이터)
+
+코딩은 vscode에서 진행 함
+
+react native 프로젝트 생성 방법
+1. 처음부터 모든 설정을 다 세팅하면서 만들기
+2. 기본적인 설정이 모두 세팅된채로 프로젝트를 만들기(expo 활용)
+   (react native 공식 사이트에서 추천하는 방식)
+
+앱웹만드는회사 옴.
+리액트씀. 
+서버는 자바랑 파이썬다씀.
+
+4교시
+javascript -> jsx
+typescript -> tsx
