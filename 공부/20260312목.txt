@@ -1,0 +1,106 @@
+260312
+1교시
+지각
+
+2,3교시
+파이썬
+
+4교시
+북샵 리액트
+
+Promise.all()
+
+recharts.js(리액트에서만 지원)
+charts.js(전통적인 방식 + 리액트도 지원) 이걸 많이씀.
+
+구글 : recharts 검색 -> https://recharts.github.io/
+
+헤더에 GUIDE 클릭 
+-> npm install recharts 복사후 런되고있는 리액트 종료후 실행 
+이후 다시 npm run dev, o 실행
+
+헤더에 Examples 클릭
+BarChart simple bar chart 클릭후 복사 붙여넣기
+
+<BarChart 디자인, data={}>
+  <CartesianGrid /> #배경 격차
+  <XAxis dataKey="name" /> #x축 레이블
+  <YAxis /> #y축 레이블
+  <Legend /> #범례 
+
+</BarChart>
+
+5교시
+chartData = [
+  {sale: 335000, day: '2026-03-04'}
+]
+
+리액트네이티브
+홈페이지 디벨롭먼트 -> 왼쪽에 flatlist클릭
+
+6교시
+리액트네이티브
+시험나오는거 연습함.
+<FlatList /> 리액트네이티브에서 반복돌릴때 사용. 
+
+data={cartList}
+renderItem={}
+keyExtractor={}
+
+icon 사용 라이브러리
+npm install @expo/vector-icons
+아이콘 웹 페이지 : https://icons.expo.fyi/Index
+
+
+
+
+스프링프로젝트만든후 해야할일
+1. 공유폴더->SPRING -> 디비연결자료 -> application_properties.txt
+에있는 내용중 ----- 위에 있는 내용만 다복사해서 
+
+src- main - resources - application_properties에 붙여넣기한다.
+(맨위에 spring.application.name= )은 그대로놔둔다.
+
+2.build.gradle 파일에 dependencies {}안에 
+implementation 'org.bgee.log4jdbc-log4j2:log4jdbc-log4j2-jdbc4:1.16' //쿼리 로그 라이브러리 추가
+implementation("org.mybatis:mybatis-typehandlers-jsr310:1.0.2") //LocalDateTime사용을위해 추가
+넣고 코끼리버튼 눌러서 동기화시킨다.
+
+3. src - main - resources 에 파일 2개 붙여넣기한다.
+   logback.xml, log4jdbc.log4j2.properties
+
+4. src - main - resources 에 mapper폴더 생성 후,
+   mapper.xml 파일 붙여 넣기한다.
+
+5. src - main - java - com.green.프로젝트명 폴더에 
+   프로젝트를대표하는 폴더 하나생성(ex> car,book 등등) 후
+   그 폴더안에 controller, dto, mapper, service 패키지 만든후,
+   각각 클래스 만들어준다. 단, mapper는 인터페이스로 만든다.
+   클래스명은 대문자, 패키지(폴더)명은 소문자로시작한다.
+
+6. DTO 클래스에 테이블에 테이블에 맞는 필드를 만들어주고,
+  게터, 세터, 투스트링 만들어준다.
+
+7. 쿼리작성후 프로젝트 진행한다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
