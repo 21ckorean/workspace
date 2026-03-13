@@ -1,0 +1,14 @@
+.home{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  width: 70%;
+  margin: 10px auto;
+  height: 80vh;  
+}
+
+.home p{
+  font-size: 3rem;
+  font-weight: bold;
+}
