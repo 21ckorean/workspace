@@ -8,7 +8,10 @@
   background-color: black;
   color: white;
   height: 40px;
+  border: 1px solid white;
 }
+
+
 
 .table a{
   color: white;
@@ -19,6 +22,13 @@
 .table td{
   text-align: center;
   vertical-align: middle;
+  border: 1px solid white;
 }
 
+.table tbody tr:nth-child(even){
+  background-color: #d3d3d3;
+}
 
+.table tbody tr:nth-child(odd){
+  background-color: #e8e8e8;
+}

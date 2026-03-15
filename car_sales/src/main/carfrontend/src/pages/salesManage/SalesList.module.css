@@ -1,0 +1,41 @@
+
+.container{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: 100px auto;
+  gap: 50px;
+  /* border: 1px solid black; */
+}
+
+.salesList thead tr:nth-child(1){
+  background-color: black;
+}
+.salesList thead tr:nth-child(2){
+  background-color: #333333;
+}
+
+.salesList thead td{
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid white;
+  height: 40px;
+}
+
+.salesList td{
+  text-align: center;
+  vertical-align: middle;
+  height: 50px;
+  
+}
+
+.salesList tbody tr:nth-child(odd){
+  background-color: #e8e8e8 ;
+}
+.salesList tbody tr:nth-child(even){
+  background-color: #d3d3d3;
+}
+
+
