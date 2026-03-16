@@ -29,8 +29,21 @@
     </insert>
 
     <!-- 판매정보 목록 조회 쿼리-->
-    <select id="selectSalesList" >
-
+    <select id="selectSalesList" resultType="map">
+        SELECT SALES_NUMBER
+            , CUSTOMER_NAME
+            , CASE
+            WHEN CUSTOMER_PHONE IS NULL OR CUSTOMER_PHONE = ''
+            THEN '-'
+            ELSE CUSTOMER_PHONE
+            END AS CUSTOMER_PHONE
+            , SALE_DATE
+            , MODEL_COLOR
+            , MODEL_NAME
+            , MODEL_PRICE
+        FROM SALES_INFO S, CAR_INFO C
+        WHERE S.MODEL_NUMBER = C.MODEL_NUMBER
+        ORDER BY SALE_DATE DESC;
     </select>
 
 </mapper>

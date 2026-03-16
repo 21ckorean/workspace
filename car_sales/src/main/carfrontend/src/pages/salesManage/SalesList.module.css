@@ -38,4 +38,10 @@
   background-color: #d3d3d3;
 }
 
-
+.salesList tbody td{
+  color: black;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid white;
+  height: 40px;
+}

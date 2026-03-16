@@ -1,15 +1,22 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './SalesList.module.css'
+import { getSalesList } from '../../api/SalesApi';
+import dayjs from 'dayjs'
 const SalesList = () => {
 
   //판매정보 목록을 저장하는 state 변수
   const [salesList, setSalesList] = useState([]);
 
-  //조회한 등록된 차량목록 정보를 저장할 state변수
-  const [carList, setCarList] = useState([])
+  //마운트시 등록된 판매정보목록 조회
+  useEffect(() => {
+    getList();
+  }, [])
 
-  //판매정보에
-
+  //조회 실행 함수
+  const getList = async () => {
+    const response = await getSalesList();
+    setSalesList(response.data);
+  }
 
   return (
     <div className={styles.container}>
@@ -50,17 +57,17 @@ const SalesList = () => {
               return(
                 <tr key={i}>
                   <td>{salesList.length - i}</td>
-                  <td>{sales.customerName}</td>
-                  <td>{sales.customerPhone}</td>
-                  <td>{sales.saleDate}</td>
-                  <td>{sales.modelColor}</td>
-                
+                  <td>{sales.CUSTOMER_NAME}</td>
+                  <td>{sales.CUSTOMER_PHONE}</td>
+                  <td>{dayjs(sales.SALE_DATE).format('YYYY.MM.DD HH:mm')}</td>
+                  <td>{sales.MODEL_COLOR}</td>
+                  <td>{sales.MODEL_NAME}</td>
+                  <td>{sales.MODEL_PRICE.toLocaleString()}원</td>               
                 </tr>
               )
             })
           }
           
-         
         </tbody>
       </table>
     </div>

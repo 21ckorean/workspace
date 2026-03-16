@@ -1,11 +1,9 @@
 import { FlatList, StyleSheet, Text, View } from 'react-native'
 import React, { useState } from 'react'
-import { dummy_data } from '../data/dummy'
+
 import CartItem from './CartItem';
 
-const CartList = () => {
-  const [cartList, setCartList] = useState(dummy_data);
-  
+const CartList = ({cartList}) => {
 
 
   return (
@@ -25,7 +23,6 @@ const CartList = () => {
           gap : 10
         }}
       />
-
 
     </View>
   )
